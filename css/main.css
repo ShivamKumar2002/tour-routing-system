@@ -1,0 +1,197 @@
+html,
+body {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    font-family: segoeui, sans-serif;
+}
+
+#myMap {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 40% auto auto;
+    grid-template-rows: auto auto auto;
+    grid-auto-flow: row;
+    grid-template-areas:
+    "Search Map Map"
+    "Locations Map Map"
+    "Submit Map Map";
+    align-content: space-between;
+}
+
+.Map { grid-area: Map; }
+
+.Search { grid-area: Search; }
+
+.Locations { grid-area: Locations; }
+
+.Submit {
+    grid-area: Submit;
+    background-color: #1DA1F2;
+    font-size: 24px;
+    padding: 12px;
+    border-radius: 16px;
+    border: 4px solid #1DA1F2;
+    color: white;
+    margin: 16px;
+    cursor: pointer;
+}
+
+.Submit:hover {
+    background-color: white;
+    border: 4px solid #1DA1F2;
+    color: #1DA1F2;
+}
+
+#search {
+    box-shadow: 0 24px 74px 0 rgba(0, 0, 0, .32);
+    border: 1px solid #ccc;
+    overflow: scroll;
+}
+
+#search > .search-input-box {
+    height: auto;
+    width: 100%;
+    padding: 15px 15px;
+}
+
+#search > .search-input-box > .search-input-group {
+    position: relative;
+    width: 85%;
+    max-width: 358px;
+    height: 30px;
+    margin: 0;
+    padding: 0;
+    border: 1px dotted #ccc;
+}
+
+#search > .search-input-box > .search-input-group > .search-icon {
+    margin: 0;
+    padding: 0;
+    background-size: 20px 20px;
+    width: 30px;
+    height: 30px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url('../img/search-icon.svg');
+}
+
+#search > .search-input-box > .search-input-group > input {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 30px;
+    width: calc(100% - 40px);
+    height: 100%;
+    margin: 0;
+    padding: 0 5px;
+    border-collapse: collapse;
+    border: 0;
+}
+
+#search > .search-input-box > .search-input-group > input:focus {
+    outline: none;
+}
+
+#results-panel {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    max-height: 40vh;
+    background-color: #fff;
+    list-style: none;
+}
+
+li {
+    border-top: 1px dotted #ccc;
+    padding: 10px 20px;
+}
+
+li:hover {
+    background-color: #f1f2f2;
+    cursor: pointer;
+}
+
+li > .title {
+    font-family: segoeui-b, sans-serif;
+    line-height: 14pt;
+    width: 100%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+li > .info {
+    width: 100%;
+    line-height: 14pt;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.poi-box {
+    max-width: 200px;
+    padding: 0;
+    margin: 0;
+}
+
+.poi-title-box {
+    background-color: #153C64;
+    width: calc(100% - 16px);
+    height: 23px;
+    padding: 8px;
+    color: #fff;
+    font-size: 12px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    font-family: segoeui-b, sans-serif;
+}
+
+.poi-content-box {
+    width: calc(100% - 16px);
+    height: calc(100% - 39px);
+    padding: 8px;
+}
+
+.poi-content-box .info {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: block;
+    background-repeat: no-repeat;
+    background-position: left;
+    padding-left: 15px;
+    background-size: 10px 10px;
+    width: calc(100% - 15px);
+}
+
+.info .phone {
+    background-image: url('../img/phone-icon.svg');
+}
+
+.info .website {
+    background-image: url('../img/globe-icon.svg');
+}
+
+.info .location {
+    background-image: url('../img/location-pin.svg');
+}
+
+#locations-panel {
+    border-radius: 5px;
+    background-color: white;
+    overflow: scroll;
+    list-style: decimal;
+    box-shadow: 0 24px 74px 0 rgba(0, 0, 0, .32);
+    border: 1px solid #ccc;
+    max-height: 40vh;
+    align-self: end;
+}
