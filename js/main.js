@@ -303,7 +303,6 @@ function optimizeRoute() {
        routeLine.properties.strokeWidth = 9;
 
         datasource.add(routeLine);
-        console.log(route);
 
         //Fit the map window to the bounding box defined by the start and end positions.
         map.setCamera({
