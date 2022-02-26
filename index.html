@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="This is a simple tour route optimization tool" />
     <meta name="keywords" content="Tour Routing, Tour Guiding, Routing, Route Optimisation, Microsoft maps, point of interest, POI" />
-    <meta name="author" content="Shivam Kumar, Mirzad Ismail" />
+    <meta name="author" content="Shivam Kumar" />
 
     <!-- Add references to the Azure Maps Map control JavaScript and CSS files. -->
     <link rel="stylesheet" href="css/atlas.css" type="text/css" />
@@ -31,12 +31,15 @@
 
 <div id="search" onclick="searchClicked()" class="Search">
     <div class="search-input-box">
+        <label>Search for Optimized routes</label>
         <div class="search-input-group">
             <div class="search-icon" type="button"></div>
             <label for="search-input"></label>
-            <input id="search-input" type="text" placeholder="Search">
+            <div class="search-input-container">
+                <input id="search-input" class="search-input" type="text" placeholder="Your search goes here">
+            </div>
         </div>
-    </div>
+    </div> 
     <ul id="results-panel"></ul>
 </div>
 <ol id="locations-panel" class="Locations"></ol>
