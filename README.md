@@ -14,3 +14,9 @@ It's similar to travelling salesman problem where they have to visit each locati
 
 1) Azure Maps
 2) Static Web Apps
+
+## The Project in action (link) :
+
+https://kind-rock-0dd4bc810.1.azurestaticapps.net
+
+
