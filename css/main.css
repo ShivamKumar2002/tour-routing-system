@@ -5,7 +5,7 @@ body {
     padding: 0;
     margin: 0;
     overflow: hidden;
-    font-family: segoeui, sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 #myMap {
@@ -15,7 +15,7 @@ body {
 }
 
 .container {
-    display: grid;
+    display: contents;
     grid-template-columns: 40% auto auto;
     grid-template-rows: auto auto auto;
     grid-auto-flow: row;
@@ -53,7 +53,6 @@ body {
 #search {
     box-shadow: 0 24px 74px 0 rgba(0, 0, 0, .32);
     border: 1px solid rgb(32, 57, 75);
-    overflow: scroll;
 }
 
 #search > .search-input-box {
@@ -65,12 +64,12 @@ body {
 #search > .search-input-box > .search-input-group {
     position: relative;
     display: flex;
-    width: 85%;
+    width: 100%;
     max-width: 358px;
     height: 30px;
     margin: 0;
     padding: 0;
-    border: 2px solid grey;
+    /* border: 2px solid grey; */
     border-radius: 5px;
     margin-top: 10px;
 }
@@ -127,17 +126,17 @@ body {
     margin: 0;
     padding: 0;
     max-height: 40vh;
-    background-color: #fff;
+    background-color: #ffffff;
     list-style: none;
 }
 
 li {
-    border-top: 1px dotted #ccc;
     padding: 10px 20px;
 }
 
 li:hover {
-    background-color: #f1f2f2;
+    border-radius: 10px;
+    background-color: #606060;
     cursor: pointer;
 }
 
@@ -210,10 +209,135 @@ li > .info {
 #locations-panel {
     border-radius: 5px;
     background-color: white;
-    overflow: scroll;
     list-style: decimal;
-    box-shadow: 0 24px 74px 0 rgba(0, 0, 0, .32);
     border: 1px solid #ccc;
     max-height: 40vh;
     align-self: end;
+    width: 100%;
+    margin: 0;
+    padding: 0;
 }
+
+/* 
+eeeeeeeeeeeeeeeeeeeeee*/
+
+
+
+.search-container {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  .search-container input[type="text"] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 2px solid #ccc;
+  }
+  
+  .search-list {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    display: none;
+    width: 100%;
+    max-height: 200px;
+    overflow-y: auto;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-top: none;
+  }
+  
+  .search-list li {
+    cursor: pointer;
+  }
+  
+  .search-list li:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .search-container input[type="text"]:focus + .search-list {
+    display: block;
+  }
+  
+  /* Show it is fixed to the top */
+body {
+    min-height: 75rem;
+    padding-top: 4.5rem;
+  }
+  
+  .bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+  
+  @media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+      font-size: 3.5rem;
+    }
+  }
+  
+  .b-example-divider {
+    width: 100%;
+    height: 3rem;
+    background-color: rgba(0, 0, 0, .1);
+    border: solid rgba(0, 0, 0, .15);
+    border-width: 1px 0;
+    box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+  }
+  
+  .b-example-vr {
+    flex-shrink: 0;
+    width: 1.5rem;
+    height: 100vh;
+  }
+  
+  .bi {
+    vertical-align: -.125em;
+    fill: currentColor;
+  }
+  
+  .nav-scroller {
+    position: relative;
+    z-index: 2;
+    height: 2.75rem;
+    overflow-y: hidden;
+  }
+  
+  .nav-scroller .nav {
+    display: flex;
+    flex-wrap: nowrap;
+    padding-bottom: 1rem;
+    margin-top: -1px;
+    overflow-x: auto;
+    text-align: center;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  .btn-bd-primary {
+    --bd-violet-bg: #712cf9;
+    --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+  
+    --bs-btn-font-weight: 600;
+    --bs-btn-color: var(--bs-white);
+    --bs-btn-bg: var(--bd-violet-bg);
+    --bs-btn-border-color: var(--bd-violet-bg);
+    --bs-btn-hover-color: var(--bs-white);
+    --bs-btn-hover-bg: #6528e0;
+    --bs-btn-hover-border-color: #6528e0;
+    --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+    --bs-btn-active-color: var(--bs-btn-hover-color);
+    --bs-btn-active-bg: #5a23c8;
+    --bs-btn-active-border-color: #5a23c8;
+  }
+  .bd-mode-toggle {
+    z-index: 1500;
+  }
