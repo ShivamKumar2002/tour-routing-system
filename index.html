@@ -1,49 +1,56 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <title>Tour Routing System</title>
-
-    <meta charset="utf-8" />
-    <link rel="shortcut icon" href="img/favicon.ico"/>
-    <meta http-equiv="x-ua-compatible" content="IE=Edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta name="description" content="This is a simple tour route optimization tool" />
-    <meta name="keywords" content="Tour Routing, Tour Guiding, Routing, Route Optimisation, Microsoft maps, point of interest, POI" />
-    <meta name="author" content="Shivam Kumar" />
-
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.111.3">
+    <title>Tour Route Optimizer</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/navbar-fixed/">
     <!-- Add references to the Azure Maps Map control JavaScript and CSS files. -->
-    <link rel="stylesheet" href="css/atlas.css" type="text/css" />
-    <script src="js/atlas.js"></script>
-
+    <link rel="stylesheet" href="./css/atlas.css" type="text/css" />
+    <script src="./js/atlas.js"></script>
     <!-- Add a reference to the Azure Maps Services Module JavaScript file. -->
-    <script src="js/atlas-service.js"></script>
-
+    <script src="./js/atlas-service.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
     <!-- Load main style file -->
-    <link rel="stylesheet" href="css/main.css" type="text/css" />
-
+    <link rel="stylesheet" href="./css/main.css" type="text/css" />
     <!-- Load the main controller script -->
-    <script src="js/main.js"></script>
-</head>
-
+    <script src="./js/main.js"></script>
+  </head>
 <body onload="GetMap()" class="container">
-<div id="myMap" class="Map" onclick="bodyClicked()"></div>
-
-<div id="search" onclick="searchClicked()" class="Search">
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Tour Route Optimizer</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse" onclick="searchClicked()" style="padding: inherit;">
+      <ul class="navbar-nav me-auto mb-2 mb-md-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" onclick="addMarker()" href="#">Add Marker</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Add Location</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+        </li>
+      </ul>
     <div class="search-input-box">
-        <label>Search for Optimized routes</label>
-        <div class="search-input-group">
-            <div class="search-icon" type="button"></div>
-            <label for="search-input"></label>
-            <div class="search-input-container">
-                <input id="search-input" class="search-input" type="text" placeholder="Your search goes here">
-            </div>
+        <input class="form-control me-2" id="search-input" type="text" placeholder="Search" aria-label="Search">
+        <div class="search-container">
+          <ul class="list-group search-list">
+            <li class="list-group-item" id="results-panel"></li>
+            <li class="list-group-item" id="locations-panel"></li>
+          </ul>
         </div>
-    </div> 
-    <ul id="results-panel"></ul>
-</div>
-<ol id="locations-panel" class="Locations"></ol>
-<button id="submit-button" class="Submit" onclick="optimizeRoute()">Optimize Route</button>
-</body>
-
+    </div>
+  </div>
+<button class="btn btn-outline-success" id="submit-button" onclick="optimizeRoute()" type="submit">Optimize</button>
+</nav>
+   <div id="myMap" class="Map" onclick="bodyClicked()"></div>
+  </body>
 </html>
